@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87CCFF571FD9277B00D1970D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CCFF561FD9277B00D1970D /* AppDelegate.swift */; };
+		87CCFF591FD9277B00D1970D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CCFF581FD9277B00D1970D /* ViewController.swift */; };
+		87CCFF5C1FD9277B00D1970D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87CCFF5A1FD9277B00D1970D /* Main.storyboard */; };
+		87CCFF5F1FD9277B00D1970D /* QpizzaDelivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87CCFF5D1FD9277B00D1970D /* QpizzaDelivery.xcdatamodeld */; };
+		87CCFF611FD9277B00D1970D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87CCFF601FD9277B00D1970D /* Assets.xcassets */; };
+		87CCFF641FD9277B00D1970D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87CCFF621FD9277B00D1970D /* LaunchScreen.storyboard */; };
+		87CCFF6F1FD9277C00D1970D /* QpizzaDeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CCFF6E1FD9277C00D1970D /* QpizzaDeliveryTests.swift */; };
+		87CCFF7A1FD9277C00D1970D /* QpizzaDeliveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CCFF791FD9277C00D1970D /* QpizzaDeliveryUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		87CCFF6B1FD9277C00D1970D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87CCFF4B1FD9277B00D1970D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87CCFF521FD9277B00D1970D;
+			remoteInfo = QpizzaDelivery;
+		};
+		87CCFF761FD9277C00D1970D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87CCFF4B1FD9277B00D1970D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87CCFF521FD9277B00D1970D;
+			remoteInfo = QpizzaDelivery;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		87CCFF531FD9277B00D1970D /* QpizzaDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QpizzaDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87CCFF561FD9277B00D1970D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		87CCFF581FD9277B00D1970D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		87CCFF5B1FD9277B00D1970D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		87CCFF5E1FD9277B00D1970D /* QpizzaDelivery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QpizzaDelivery.xcdatamodel; sourceTree = "<group>"; };
+		87CCFF601FD9277B00D1970D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87CCFF631FD9277B00D1970D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87CCFF651FD9277B00D1970D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87CCFF6A1FD9277C00D1970D /* QpizzaDeliveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QpizzaDeliveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87CCFF6E1FD9277C00D1970D /* QpizzaDeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QpizzaDeliveryTests.swift; sourceTree = "<group>"; };
+		87CCFF701FD9277C00D1970D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87CCFF751FD9277C00D1970D /* QpizzaDeliveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QpizzaDeliveryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87CCFF791FD9277C00D1970D /* QpizzaDeliveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QpizzaDeliveryUITests.swift; sourceTree = "<group>"; };
+		87CCFF7B1FD9277C00D1970D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87CCFF501FD9277B00D1970D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CCFF671FD9277C00D1970D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CCFF721FD9277C00D1970D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87CCFF4A1FD9277B00D1970D = {
+			isa = PBXGroup;
+			children = (
+				87CCFF551FD9277B00D1970D /* QpizzaDelivery */,
+				87CCFF6D1FD9277C00D1970D /* QpizzaDeliveryTests */,
+				87CCFF781FD9277C00D1970D /* QpizzaDeliveryUITests */,
+				87CCFF541FD9277B00D1970D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87CCFF541FD9277B00D1970D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87CCFF531FD9277B00D1970D /* QpizzaDelivery.app */,
+				87CCFF6A1FD9277C00D1970D /* QpizzaDeliveryTests.xctest */,
+				87CCFF751FD9277C00D1970D /* QpizzaDeliveryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87CCFF551FD9277B00D1970D /* QpizzaDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				87CCFF561FD9277B00D1970D /* AppDelegate.swift */,
+				87CCFF581FD9277B00D1970D /* ViewController.swift */,
+				87CCFF5A1FD9277B00D1970D /* Main.storyboard */,
+				87CCFF601FD9277B00D1970D /* Assets.xcassets */,
+				87CCFF621FD9277B00D1970D /* LaunchScreen.storyboard */,
+				87CCFF651FD9277B00D1970D /* Info.plist */,
+				87CCFF5D1FD9277B00D1970D /* QpizzaDelivery.xcdatamodeld */,
+			);
+			path = QpizzaDelivery;
+			sourceTree = "<group>";
+		};
+		87CCFF6D1FD9277C00D1970D /* QpizzaDeliveryTests */ = {
+			isa = PBXGroup;
+			children = (
+				87CCFF6E1FD9277C00D1970D /* QpizzaDeliveryTests.swift */,
+				87CCFF701FD9277C00D1970D /* Info.plist */,
+			);
+			path = QpizzaDeliveryTests;
+			sourceTree = "<group>";
+		};
+		87CCFF781FD9277C00D1970D /* QpizzaDeliveryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				87CCFF791FD9277C00D1970D /* QpizzaDeliveryUITests.swift */,
+				87CCFF7B1FD9277C00D1970D /* Info.plist */,
+			);
+			path = QpizzaDeliveryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87CCFF521FD9277B00D1970D /* QpizzaDelivery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87CCFF7E1FD9277C00D1970D /* Build configuration list for PBXNativeTarget "QpizzaDelivery" */;
+			buildPhases = (
+				87CCFF4F1FD9277B00D1970D /* Sources */,
+				87CCFF501FD9277B00D1970D /* Frameworks */,
+				87CCFF511FD9277B00D1970D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QpizzaDelivery;
+			productName = QpizzaDelivery;
+			productReference = 87CCFF531FD9277B00D1970D /* QpizzaDelivery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		87CCFF691FD9277C00D1970D /* QpizzaDeliveryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87CCFF811FD9277C00D1970D /* Build configuration list for PBXNativeTarget "QpizzaDeliveryTests" */;
+			buildPhases = (
+				87CCFF661FD9277C00D1970D /* Sources */,
+				87CCFF671FD9277C00D1970D /* Frameworks */,
+				87CCFF681FD9277C00D1970D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87CCFF6C1FD9277C00D1970D /* PBXTargetDependency */,
+			);
+			name = QpizzaDeliveryTests;
+			productName = QpizzaDeliveryTests;
+			productReference = 87CCFF6A1FD9277C00D1970D /* QpizzaDeliveryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		87CCFF741FD9277C00D1970D /* QpizzaDeliveryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87CCFF841FD9277C00D1970D /* Build configuration list for PBXNativeTarget "QpizzaDeliveryUITests" */;
+			buildPhases = (
+				87CCFF711FD9277C00D1970D /* Sources */,
+				87CCFF721FD9277C00D1970D /* Frameworks */,
+				87CCFF731FD9277C00D1970D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87CCFF771FD9277C00D1970D /* PBXTargetDependency */,
+			);
+			name = QpizzaDeliveryUITests;
+			productName = QpizzaDeliveryUITests;
+			productReference = 87CCFF751FD9277C00D1970D /* QpizzaDeliveryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87CCFF4B1FD9277B00D1970D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = AmarBhatia;
+				TargetAttributes = {
+					87CCFF521FD9277B00D1970D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					87CCFF691FD9277C00D1970D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 87CCFF521FD9277B00D1970D;
+					};
+					87CCFF741FD9277C00D1970D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 87CCFF521FD9277B00D1970D;
+					};
+				};
+			};
+			buildConfigurationList = 87CCFF4E1FD9277B00D1970D /* Build configuration list for PBXProject "QpizzaDelivery" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87CCFF4A1FD9277B00D1970D;
+			productRefGroup = 87CCFF541FD9277B00D1970D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87CCFF521FD9277B00D1970D /* QpizzaDelivery */,
+				87CCFF691FD9277C00D1970D /* QpizzaDeliveryTests */,
+				87CCFF741FD9277C00D1970D /* QpizzaDeliveryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87CCFF511FD9277B00D1970D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87CCFF641FD9277B00D1970D /* LaunchScreen.storyboard in Resources */,
+				87CCFF611FD9277B00D1970D /* Assets.xcassets in Resources */,
+				87CCFF5C1FD9277B00D1970D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CCFF681FD9277C00D1970D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CCFF731FD9277C00D1970D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87CCFF4F1FD9277B00D1970D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87CCFF5F1FD9277B00D1970D /* QpizzaDelivery.xcdatamodeld in Sources */,
+				87CCFF591FD9277B00D1970D /* ViewController.swift in Sources */,
+				87CCFF571FD9277B00D1970D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CCFF661FD9277C00D1970D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87CCFF6F1FD9277C00D1970D /* QpizzaDeliveryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CCFF711FD9277C00D1970D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87CCFF7A1FD9277C00D1970D /* QpizzaDeliveryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87CCFF6C1FD9277C00D1970D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87CCFF521FD9277B00D1970D /* QpizzaDelivery */;
+			targetProxy = 87CCFF6B1FD9277C00D1970D /* PBXContainerItemProxy */;
+		};
+		87CCFF771FD9277C00D1970D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87CCFF521FD9277B00D1970D /* QpizzaDelivery */;
+			targetProxy = 87CCFF761FD9277C00D1970D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		87CCFF5A1FD9277B00D1970D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87CCFF5B1FD9277B00D1970D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		87CCFF621FD9277B00D1970D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87CCFF631FD9277B00D1970D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87CCFF7C1FD9277C00D1970D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		87CCFF7D1FD9277C00D1970D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87CCFF7F1FD9277C00D1970D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 465955C7HD;
+				INFOPLIST_FILE = QpizzaDelivery/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AmarBhatia.QpizzaDelivery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87CCFF801FD9277C00D1970D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 465955C7HD;
+				INFOPLIST_FILE = QpizzaDelivery/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AmarBhatia.QpizzaDelivery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		87CCFF821FD9277C00D1970D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 465955C7HD;
+				INFOPLIST_FILE = QpizzaDeliveryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AmarBhatia.QpizzaDeliveryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QpizzaDelivery.app/QpizzaDelivery";
+			};
+			name = Debug;
+		};
+		87CCFF831FD9277C00D1970D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 465955C7HD;
+				INFOPLIST_FILE = QpizzaDeliveryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AmarBhatia.QpizzaDeliveryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QpizzaDelivery.app/QpizzaDelivery";
+			};
+			name = Release;
+		};
+		87CCFF851FD9277C00D1970D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 465955C7HD;
+				INFOPLIST_FILE = QpizzaDeliveryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AmarBhatia.QpizzaDeliveryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QpizzaDelivery;
+			};
+			name = Debug;
+		};
+		87CCFF861FD9277C00D1970D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 465955C7HD;
+				INFOPLIST_FILE = QpizzaDeliveryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AmarBhatia.QpizzaDeliveryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QpizzaDelivery;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87CCFF4E1FD9277B00D1970D /* Build configuration list for PBXProject "QpizzaDelivery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87CCFF7C1FD9277C00D1970D /* Debug */,
+				87CCFF7D1FD9277C00D1970D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87CCFF7E1FD9277C00D1970D /* Build configuration list for PBXNativeTarget "QpizzaDelivery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87CCFF7F1FD9277C00D1970D /* Debug */,
+				87CCFF801FD9277C00D1970D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87CCFF811FD9277C00D1970D /* Build configuration list for PBXNativeTarget "QpizzaDeliveryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87CCFF821FD9277C00D1970D /* Debug */,
+				87CCFF831FD9277C00D1970D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87CCFF841FD9277C00D1970D /* Build configuration list for PBXNativeTarget "QpizzaDeliveryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87CCFF851FD9277C00D1970D /* Debug */,
+				87CCFF861FD9277C00D1970D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		87CCFF5D1FD9277B00D1970D /* QpizzaDelivery.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				87CCFF5E1FD9277B00D1970D /* QpizzaDelivery.xcdatamodel */,
+			);
+			currentVersion = 87CCFF5E1FD9277B00D1970D /* QpizzaDelivery.xcdatamodel */;
+			path = QpizzaDelivery.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 87CCFF4B1FD9277B00D1970D /* Project object */;
+}
