@@ -1,0 +1,6 @@
+framework module Pods_QpizzaDeliveryTests {
+  umbrella header "Pods-QpizzaDeliveryTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
