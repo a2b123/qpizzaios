@@ -8,17 +8,20 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 protocol OrderFooterDelegate: class {
     func didTapPayent(cell: OrderFooter)
+    func showAlert(cell: OrderFooter)
 }
 
-class OrderFooter: UICollectionReusableView {
-    
+class OrderFooter: UICollectionReusableView, CLLocationManagerDelegate, UITextFieldDelegate {
+
     let screenSize = UIScreen.main.bounds
     var delegate: OrderFooterDelegate?
+    var locationManager: CLLocationManager?
 
-    
+
     let totalView: UIView = {
         let view = UIView()
         return view
@@ -33,7 +36,7 @@ class OrderFooter: UICollectionReusableView {
     
     let totalPriceLabel: UILabel = {
         let label = UILabel()
-        label.text = "$12.00"
+        label.text = "$0.00"
         label.font = UIFont.boldSystemFont(ofSize: 12)
         label.textAlignment = .right
         return label
@@ -91,7 +94,12 @@ class OrderFooter: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+
         backgroundColor = .white
+//        getLatestOrder()
+        checkCurrentOrder()
+        showUsersLocation()
+
         
         addSubview(totalView)
         addSubview(totalLabel)
@@ -131,18 +139,116 @@ class OrderFooter: UICollectionReusableView {
         
         _  = mapView.anchor(addressView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 4, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: screenSize.height / 5)
         _ = addPaymentButton.anchor(mapView.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        
-        
+    
+    }
+    
+    func getLatestOrder() {
+        APIManager.shared.getLatestOrder { (json) in
+            if json == .null {
+                self.checkCurrentOrder()
+            } else {
+                print(json)
+            }
+            
+            
+            
+            //            if let orderDetails = json["order"]["order_details"].array {
+            //                self.order = orderDetails
+            //                self.collectionView.reloadData()
+            //            }
+        }
+    }
 
+    
+    func checkCurrentOrder() {
+
+        if Order.currentOrder.items.count == 0 {
+            totalLabel.isHidden = true
+            totalPriceLabel.isHidden = true
+            mapView.isHidden = true
+            addressLabel.isHidden = true
+            addressTextField.isHidden = true
+            topSeperatorView.isHidden = true
+            bottomSeperatorView.isHidden = true
+            addPaymentButton.isHidden = true
+            
+        } else {
+            totalLabel.isHidden = false
+            totalPriceLabel.isHidden = false
+            mapView.isHidden = false
+            addressLabel.isHidden = false
+            addressTextField.isHidden = false
+            topSeperatorView.isHidden = false
+            bottomSeperatorView.isHidden = false
+            addPaymentButton.isHidden = false
+            totalPriceLabel.text = "$\(Order.currentOrder.getTotalOrderPrice())"
+        }
+
+    }
+    
+    func showUsersLocation() {
+        addressTextField.delegate = self
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager?.delegate = self
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager?.requestAlwaysAuthorization()
+            locationManager?.startUpdatingLocation()
+            
+            mapView.showsUserLocation = true
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last! as CLLocation
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        self.mapView.setRegion(region, animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let address = textField.text {
+            let geocoder = CLGeocoder()
+            Order.currentOrder.address = address
+            
+            geocoder.geocodeAddressString(address) { (placemarks, error) in
+                if let error = error {
+                    print("Error with geocoding address string:", error)
+                }
+                
+                if let placemark = placemarks?.first {
+                    if let location = placemark.location?.coordinate {
+                        let coordiantes:  CLLocationCoordinate2D = location
+                        let region = MKCoordinateRegion(
+                            center: coordiantes,
+                            span: MKCoordinateSpanMake(0.01, 0.01)
+                        )
+                        
+                        self.mapView.setRegion(region, animated: true)
+                        self.locationManager?.stopUpdatingLocation()
+                        
+                        let dropPin = MKPointAnnotation()
+                        dropPin.coordinate = coordiantes
+                        self.mapView.addAnnotation(dropPin)
+                    }
+                }
+            }
+        }
         
+        return true
     }
     
     @objc func addPaymentButtonPressed() {
         print("Add Payment Button Pressed")
-        delegate?.didTapPayent(cell: self)
-        
-        
+        if addressTextField.text == "" {
+            delegate?.showAlert(cell: self)
+            addressTextField.becomeFirstResponder()
+        } else {
+            Order.currentOrder.address = addressTextField.text
+            delegate?.didTapPayent(cell: self)
+        }
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

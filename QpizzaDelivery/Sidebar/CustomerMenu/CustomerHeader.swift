@@ -41,8 +41,14 @@ class CustomerHeader: UICollectionReusableView {
         super.init(frame: frame)
         
         backgroundColor = UIColor.qpizzaRed()
-
         
+//        print("Username:", UserModel.currentUser.name)
+        usernameLabel.text = UserModel.currentUser.name
+        
+        guard let profileImageUrl = UserModel.currentUser.profileImageUrl else { return }
+        guard let profileURL = URL(string: profileImageUrl) else { return }
+        profilePictureImageView.image = try! UIImage(data: Data(contentsOf: profileURL))
+
         addSubview(profilePictureImageView)
         addSubview(usernameLabel)
         addSubview(seperatorView)

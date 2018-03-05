@@ -11,6 +11,7 @@ import Stripe
 
 protocol PaymentDelegate {
     func didTapPaymentCell(cell: PaymentCell)
+    func showAlert(cell: PaymentCell)
 }
 
 class PaymentCell: BaseCell {
@@ -47,9 +48,31 @@ class PaymentCell: BaseCell {
 
     }
     
+    
     @objc func placeOrderButtonPressed() {
         print("Place Order Button Pressed inside PaymentController")
-        delegate?.didTapPaymentCell(cell: self)        
         
+        APIManager.shared.getLatestOrder { (json) in
+            if json["order"]["status"] == .null || json["order"]["status"] == "Delivered" {
+                // Processing the payment and create an Order
+                
+                let card = self.creditCardTextField.cardParams
+                
+                STPAPIClient.shared().createToken(withCard: card, completion: { (token, error) in
+                    if let error = error {
+                        print("Error with credit card placing order:", error)
+                    } else if let stripeToken = token {
+                        APIManager.shared.createOrder(stripeToken: stripeToken.tokenId, completionHandler: { (json) in
+                            Order.currentOrder.reset()
+                            self.delegate?.didTapPaymentCell(cell: self)
+                        })
+                    }
+                })
+            } else {
+                // Show Alert
+                self.delegate?.showAlert(cell: self)
+            }
+        }
+
     }
 }

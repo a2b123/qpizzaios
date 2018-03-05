@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class DeliveryController: UICollectionViewController, UICollectionViewDelegateFlowLayout, SWRevealViewControllerDelegate {
     
@@ -15,12 +16,12 @@ class DeliveryController: UICollectionViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView?.backgroundColor = .green
+        collectionView?.backgroundColor = .white
         collectionView?.register(DeliveryCell.self, forCellWithReuseIdentifier: deliveryCellId)
         
-        print("RV", self.revealViewController())
+        print("RV in Delivery Status:", self.revealViewController())
         if self.revealViewController() != nil {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu2-black-32").withRenderingMode(.alwaysOriginal), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icon_menu_24dp").withRenderingMode(.alwaysOriginal), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
 

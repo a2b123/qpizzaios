@@ -30,16 +30,11 @@ class RestaurantController: UICollectionViewController, UICollectionViewDelegate
 
     }
     
-    // FIXME: issue with this...navigationcontroller is presenting, not pushing ontop of stack view
-    func didTapRestaurantCell(cell: RestaurantCell) {
+    func didTapRestaurantCell(cell: RestaurantCell, withMenuController controller: MenuController) {
         print("Did Tap Restaurant Cell - Restaurant Controller")
-        
-        let layout = UICollectionViewFlowLayout()
-        let controller = MenuController(collectionViewLayout: layout)
         navigationController?.pushViewController(controller, animated: true)
-        
-        
     }
+    
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: restaurantCellId, for: indexPath) as! RestaurantCell
@@ -52,7 +47,7 @@ class RestaurantController: UICollectionViewController, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
+        return CGSize(width: self.view.frame.width, height: self.view.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

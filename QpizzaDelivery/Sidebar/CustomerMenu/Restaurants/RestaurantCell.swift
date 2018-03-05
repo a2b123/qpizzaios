@@ -9,13 +9,11 @@
 import UIKit
 
 protocol RestaurantDelegate {
-    func didTapRestaurantCell(cell: RestaurantCell)
-    
+    func didTapRestaurantCell(cell: RestaurantCell, withMenuController: MenuController)
 }
 
 
 class RestaurantCell: BaseCell, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     
     var delegate: RestaurantDelegate?
     var restaurants = [RestaurantModel]()
@@ -73,7 +71,7 @@ class RestaurantCell: BaseCell, UISearchBarDelegate, UICollectionViewDelegate, U
     // MARK - Helper Methods
     func loadRestaurants() {
         
-        showActivityIndicator()
+        Helpers.showActivityIndicator(activityIndicator, self)
         
         APIManager.shared.getRestaurants { (json) in
             if json != .null {
@@ -86,7 +84,7 @@ class RestaurantCell: BaseCell, UISearchBarDelegate, UICollectionViewDelegate, U
                         self.restaurants.append(restaurant)
                     }
                     self.collectionView.reloadData()
-                    self.hideActivityIndicator()
+                    Helpers.hideActivityIndicator(self.activityIndicator)
                 }
             } else {
                 print("Error loading JSON into Restaurant ViewController")
@@ -94,55 +92,17 @@ class RestaurantCell: BaseCell, UISearchBarDelegate, UICollectionViewDelegate, U
         }
     }
     
-    func loadImage(imageView: UIImageView, urlString: String) {
-        
-        let imageUrl: URL = URL(string: urlString)!
-        URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
-            if let error = error {
-                print("Error loading image for Restaurant Controller:", error.localizedDescription)
-            }
-            guard let data = data, error == nil else { return }
-            
-            DispatchQueue.main.async(execute: {
-                imageView.image = UIImage(data: data)
-            })
-            }.resume()
-    }
-    
-    func showActivityIndicator() {
-        activityIndicator.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
-        activityIndicator.center = center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-        activityIndicator.color = UIColor.qpizzaGold()
-        
-        addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-    }
-    
-    func hideActivityIndicator() {
-        activityIndicator.stopAnimating()
-    }
     
     //MARK: CollectionView Delegate & DataSource Methods
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: restaurantCollectionViewCell, for: indexPath) as! RestaurantCollectionViewCell
-        let restaurant: RestaurantModel
         
         if searchBar.text != "" {
-            restaurant = filteredRestaurants[indexPath.item]
+            cell.restauarnt = filteredRestaurants[indexPath.item]
         } else {
-            restaurant = restaurants[indexPath.item]
+            cell.restauarnt = restaurants[indexPath.item]
         }
         
-        cell.restaurantNameLabel.text = restaurant.name
-        cell.restaurantAddressLabel.text = restaurant.address
-        
-        if let logoName = restaurant.logo {
-            let url = "\(logoName)"
-            loadImage(imageView: cell.restaurantLogoImageView, urlString: url)
-        }
-
         return cell
     }
     
@@ -155,25 +115,16 @@ class RestaurantCell: BaseCell, UISearchBarDelegate, UICollectionViewDelegate, U
         return self.restaurants.count
     }
     
-    //FIXME: Restaurant Name Navigation Title is still not be passed from RestaurantCell to MenuController
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Did Select Item - Restaurant Cell")
         
-//        let layout = UICollectionViewFlowLayout()
-//        let controller = MenuController(collectionViewLayout: layout)
-//
-//        controller.restaurant = self.restaurants[indexPath.item]
-//
-//        restaurants
-        
-//        print("Controller", controller.restaurant) // Optional(QpizzaDelivery.RestaurantModel)
-//        print("Restaurant:", self.restaurants) // [QpizzaDelivery.RestaurantModel, QpizzaDelivery.RestaurantModel, QpizzaDelivery.RestaurantModel]
-//        print("IndexPath:", self.restaurants[indexPath.item]) // QpizzaDelivery.RestaurantModel
-        
-        delegate?.didTapRestaurantCell(cell: self)
+        let layout = UICollectionViewFlowLayout()
+        let controller = MenuController(collectionViewLayout: layout)
+        controller.restaurant = self.restaurants[indexPath.item]
+        delegate?.didTapRestaurantCell(cell: self, withMenuController: controller)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ zcollectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: frame.width, height: 200)
     }
     

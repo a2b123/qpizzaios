@@ -13,9 +13,13 @@
 		8700CAAA1FF3223900AFC5CC /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8700CAA91FF3223900AFC5CC /* RestaurantModel.swift */; };
 		8700CAAC1FF4206A00AFC5CC /* RestaurantCollectionViewCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8700CAAB1FF4206A00AFC5CC /* RestaurantCollectionViewCell .swift */; };
 		8700CAAF1FF4423000AFC5CC /* MenuItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8700CAAE1FF4423000AFC5CC /* MenuItemsModel.swift */; };
+		8716BA351FF8A4E5009B7B6C /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716BA341FF8A4E5009B7B6C /* OrderModel.swift */; };
 		872D52851FDC98520025C335 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D52841FDC98520025C335 /* MenuCell.swift */; };
 		872D52881FDCD5680025C335 /* MenuDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D52871FDCD5680025C335 /* MenuDetailsController.swift */; };
 		872D528A1FDCD5840025C335 /* MenuDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D52891FDCD5840025C335 /* MenuDetailsCell.swift */; };
+		8733A49C204C9A5B00ED7A5F /* DriverDelivController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733A49B204C9A5B00ED7A5F /* DriverDelivController.swift */; };
+		8733A49E204CA09B00ED7A5F /* DriverDelivCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733A49D204CA09B00ED7A5F /* DriverDelivCell .swift */; };
+		874EC9E9200FEF4600863FB4 /* DriverOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874EC9E8200FEF4600863FB4 /* DriverOrder.swift */; };
 		8751A68C1FD92F9C0068E3FE /* CustomerMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8751A68B1FD92F9C0068E3FE /* CustomerMenuCell.swift */; };
 		8751A68E1FD92FB50068E3FE /* CustomerMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8751A68D1FD92FB50068E3FE /* CustomerMenuController.swift */; };
 		8751A6911FD9303A0068E3FE /* DriverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8751A6901FD9303A0068E3FE /* DriverModel.swift */; };
@@ -27,6 +31,13 @@
 		8751A69E1FDB34190068E3FE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8751A69D1FDB34190068E3FE /* HomeViewController.swift */; };
 		8751A6A01FDB4F730068E3FE /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8751A69F1FDB4F730068E3FE /* RestaurantController.swift */; };
 		8751A6A41FDB52AE0068E3FE /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8751A6A31FDB52AE0068E3FE /* RestaurantCell.swift */; };
+		875CA5FE200FCE43005E7FDA /* DriverOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875CA5FD200FCE43005E7FDA /* DriverOrderController.swift */; };
+		875CA600200FCE9D005E7FDA /* DriverOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875CA5FF200FCE9D005E7FDA /* DriverOrderCell.swift */; };
+		875CA603200FD8B2005E7FDA /* DriverDeliveryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875CA602200FD8B2005E7FDA /* DriverDeliveryController.swift */; };
+		875CA605200FD8BC005E7FDA /* DriverDeliveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875CA604200FD8BC005E7FDA /* DriverDeliveryCell.swift */; };
+		875CA607200FDA4A005E7FDA /* DriverDeliveryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875CA606200FDA4A005E7FDA /* DriverDeliveryCollectionViewCell.swift */; };
+		875CA60A200FE0D6005E7FDA /* DriverStatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875CA609200FE0D6005E7FDA /* DriverStatisticsController.swift */; };
+		875CA60C200FE181005E7FDA /* DriverStatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875CA60B200FE181005E7FDA /* DriverStatisticsCell.swift */; };
 		876A30C91FDBBBA100F81855 /* RestaurantHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A30C81FDBBBA100F81855 /* RestaurantHeader.swift */; };
 		876A30CB1FDBCC1500F81855 /* CustomerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A30CA1FDBCC1500F81855 /* CustomerHeader.swift */; };
 		876A30CD1FDBCC2000F81855 /* DriverHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876A30CC1FDBCC2000F81855 /* DriverHeader.swift */; };
@@ -87,9 +98,13 @@
 		8700CAA91FF3223900AFC5CC /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		8700CAAB1FF4206A00AFC5CC /* RestaurantCollectionViewCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantCollectionViewCell .swift"; sourceTree = "<group>"; };
 		8700CAAE1FF4423000AFC5CC /* MenuItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsModel.swift; sourceTree = "<group>"; };
+		8716BA341FF8A4E5009B7B6C /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		872D52841FDC98520025C335 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		872D52871FDCD5680025C335 /* MenuDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsController.swift; sourceTree = "<group>"; };
 		872D52891FDCD5840025C335 /* MenuDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsCell.swift; sourceTree = "<group>"; };
+		8733A49B204C9A5B00ED7A5F /* DriverDelivController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDelivController.swift; sourceTree = "<group>"; };
+		8733A49D204CA09B00ED7A5F /* DriverDelivCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriverDelivCell .swift"; sourceTree = "<group>"; };
+		874EC9E8200FEF4600863FB4 /* DriverOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverOrder.swift; sourceTree = "<group>"; };
 		8751A68B1FD92F9C0068E3FE /* CustomerMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMenuCell.swift; sourceTree = "<group>"; };
 		8751A68D1FD92FB50068E3FE /* CustomerMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMenuController.swift; sourceTree = "<group>"; };
 		8751A6901FD9303A0068E3FE /* DriverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverModel.swift; sourceTree = "<group>"; };
@@ -101,6 +116,13 @@
 		8751A69D1FDB34190068E3FE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8751A69F1FDB4F730068E3FE /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
 		8751A6A31FDB52AE0068E3FE /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
+		875CA5FD200FCE43005E7FDA /* DriverOrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverOrderController.swift; sourceTree = "<group>"; };
+		875CA5FF200FCE9D005E7FDA /* DriverOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverOrderCell.swift; sourceTree = "<group>"; };
+		875CA602200FD8B2005E7FDA /* DriverDeliveryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDeliveryController.swift; sourceTree = "<group>"; };
+		875CA604200FD8BC005E7FDA /* DriverDeliveryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDeliveryCell.swift; sourceTree = "<group>"; };
+		875CA606200FDA4A005E7FDA /* DriverDeliveryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverDeliveryCollectionViewCell.swift; sourceTree = "<group>"; };
+		875CA609200FE0D6005E7FDA /* DriverStatisticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStatisticsController.swift; sourceTree = "<group>"; };
+		875CA60B200FE181005E7FDA /* DriverStatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStatisticsCell.swift; sourceTree = "<group>"; };
 		876A30C81FDBBBA100F81855 /* RestaurantHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantHeader.swift; sourceTree = "<group>"; };
 		876A30CA1FDBCC1500F81855 /* CustomerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHeader.swift; sourceTree = "<group>"; };
 		876A30CC1FDBCC2000F81855 /* DriverHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverHeader.swift; sourceTree = "<group>"; };
@@ -217,12 +239,23 @@
 			path = MealDetailsController;
 			sourceTree = "<group>";
 		};
+		8733A49F204CAFAC00ED7A5F /* UNUSED */ = {
+			isa = PBXGroup;
+			children = (
+				875CA606200FDA4A005E7FDA /* DriverDeliveryCollectionViewCell.swift */,
+				8733A49B204C9A5B00ED7A5F /* DriverDelivController.swift */,
+				8733A49D204CA09B00ED7A5F /* DriverDelivCell .swift */,
+			);
+			path = UNUSED;
+			sourceTree = "<group>";
+		};
 		8751A6891FD92EB40068E3FE /* DriverMenu */ = {
 			isa = PBXGroup;
 			children = (
 				876A30CC1FDBCC2000F81855 /* DriverHeader.swift */,
 				87CCFF8F1FD9281300D1970D /* DriverMenuCell.swift */,
 				87CCFF971FD9293A00D1970D /* DriverMenuController.swift */,
+				875CA5FC200FCE2E005E7FDA /* DriverOrders */,
 			);
 			path = DriverMenu;
 			sourceTree = "<group>";
@@ -233,6 +266,8 @@
 				876A30CA1FDBCC1500F81855 /* CustomerHeader.swift */,
 				8751A68B1FD92F9C0068E3FE /* CustomerMenuCell.swift */,
 				8751A68D1FD92FB50068E3FE /* CustomerMenuController.swift */,
+				8751A6A11FDB50420068E3FE /* Restaurants */,
+				872D52831FDC983A0025C335 /* Menu */,
 			);
 			path = CustomerMenu;
 			sourceTree = "<group>";
@@ -245,7 +280,9 @@
 				8785649B1FF0F041001484E7 /* UserModel.swift */,
 				8700CAA91FF3223900AFC5CC /* RestaurantModel.swift */,
 				8700CAAE1FF4423000AFC5CC /* MenuItemsModel.swift */,
+				8716BA341FF8A4E5009B7B6C /* OrderModel.swift */,
 				8751A6951FD934D00068E3FE /* SidebarOptions.swift */,
+				874EC9E8200FEF4600863FB4 /* DriverOrder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,6 +307,36 @@
 				8775506B1FF6E666004870CC /* Helpers.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		875CA5FC200FCE2E005E7FDA /* DriverOrders */ = {
+			isa = PBXGroup;
+			children = (
+				875CA5FF200FCE9D005E7FDA /* DriverOrderCell.swift */,
+				875CA5FD200FCE43005E7FDA /* DriverOrderController.swift */,
+				875CA601200FD89A005E7FDA /* DriverDelivery */,
+			);
+			path = DriverOrders;
+			sourceTree = "<group>";
+		};
+		875CA601200FD89A005E7FDA /* DriverDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				8733A49F204CAFAC00ED7A5F /* UNUSED */,
+				875CA604200FD8BC005E7FDA /* DriverDeliveryCell.swift */,
+				875CA602200FD8B2005E7FDA /* DriverDeliveryController.swift */,
+				875CA608200FE0C3005E7FDA /* DriverStatistics */,
+			);
+			path = DriverDelivery;
+			sourceTree = "<group>";
+		};
+		875CA608200FE0C3005E7FDA /* DriverStatistics */ = {
+			isa = PBXGroup;
+			children = (
+				875CA60B200FE181005E7FDA /* DriverStatisticsCell.swift */,
+				875CA609200FE0D6005E7FDA /* DriverStatisticsController.swift */,
+			);
+			path = DriverStatistics;
 			sourceTree = "<group>";
 		};
 		8785649A1FF0E25D001484E7 /* Managers */ = {
@@ -364,8 +431,6 @@
 				8751A68F1FD930210068E3FE /* Model */,
 				87CCFF961FD9291C00D1970D /* Login */,
 				87A92D751FF1A76300A7BCE0 /* Sidebar */,
-				8751A6A11FDB50420068E3FE /* Restaurants */,
-				872D52831FDC983A0025C335 /* Menu */,
 				87CCFF911FD9286500D1970D /* Library */,
 				87CCFF581FD9277B00D1970D /* ViewController.swift */,
 				87CCFF5A1FD9277B00D1970D /* Main.storyboard */,
@@ -701,6 +766,7 @@
 				8751A6A41FDB52AE0068E3FE /* RestaurantCell.swift in Sources */,
 				87CCAABF1FED905200243FFF /* DeliveryCell.swift in Sources */,
 				87CCAAB51FECD3BB00243FFF /* OrderCollectionViewCell.swift in Sources */,
+				8733A49E204CA09B00ED7A5F /* DriverDelivCell .swift in Sources */,
 				8751A68C1FD92F9C0068E3FE /* CustomerMenuCell.swift in Sources */,
 				87CCAAB11FEC73BB00243FFF /* OrderCell.swift in Sources */,
 				8751A6961FD934D00068E3FE /* SidebarOptions.swift in Sources */,
@@ -708,7 +774,9 @@
 				8785649C1FF0F041001484E7 /* UserModel.swift in Sources */,
 				87CCFF8E1FD9280A00D1970D /* Extensions.swift in Sources */,
 				87CCFF901FD9281300D1970D /* DriverMenuCell.swift in Sources */,
+				875CA600200FCE9D005E7FDA /* DriverOrderCell.swift in Sources */,
 				8751A69E1FDB34190068E3FE /* HomeViewController.swift in Sources */,
+				875CA60A200FE0D6005E7FDA /* DriverStatisticsController.swift in Sources */,
 				87CCFF951FD928F200D1970D /* SWRevealViewController.m in Sources */,
 				87CCAABA1FED8E1900243FFF /* PaymentCell.swift in Sources */,
 				87CCAABD1FED904800243FFF /* DeliveryController.swift in Sources */,
@@ -717,18 +785,26 @@
 				87CCFF591FD9277B00D1970D /* ViewController.swift in Sources */,
 				8775506C1FF6E666004870CC /* Helpers.swift in Sources */,
 				8751A6981FDB1F3A0068E3FE /* FrontController.swift in Sources */,
+				875CA60C200FE181005E7FDA /* DriverStatisticsCell.swift in Sources */,
 				8751A6A01FDB4F730068E3FE /* RestaurantController.swift in Sources */,
+				875CA603200FD8B2005E7FDA /* DriverDeliveryController.swift in Sources */,
+				8716BA351FF8A4E5009B7B6C /* OrderModel.swift in Sources */,
 				8751A6931FD9308D0068E3FE /* CustomerModel.swift in Sources */,
 				87A92D741FF18F5100A7BCE0 /* Constants.swift in Sources */,
 				87A92D721FF170EF00A7BCE0 /* APIManager.swift in Sources */,
+				874EC9E9200FEF4600863FB4 /* DriverOrder.swift in Sources */,
 				872D528A1FDCD5840025C335 /* MenuDetailsCell.swift in Sources */,
+				875CA5FE200FCE43005E7FDA /* DriverOrderController.swift in Sources */,
 				87CCAAB81FECEB3E00243FFF /* PaymentController.swift in Sources */,
 				87CCFF8C1FD9280300D1970D /* BaseCell.swift in Sources */,
+				875CA607200FDA4A005E7FDA /* DriverDeliveryCollectionViewCell.swift in Sources */,
+				8733A49C204C9A5B00ED7A5F /* DriverDelivController.swift in Sources */,
 				872D52881FDCD5680025C335 /* MenuDetailsController.swift in Sources */,
 				872D52851FDC98520025C335 /* MenuCell.swift in Sources */,
 				8751A69C1FDB34050068E3FE /* MenuController.swift in Sources */,
 				8700CAAC1FF4206A00AFC5CC /* RestaurantCollectionViewCell .swift in Sources */,
 				8700CAAF1FF4423000AFC5CC /* MenuItemsModel.swift in Sources */,
+				875CA605200FD8BC005E7FDA /* DriverDeliveryCell.swift in Sources */,
 				87CCFF571FD9277B00D1970D /* AppDelegate.swift in Sources */,
 				8751A69A1FDB1F440068E3FE /* RearController.swift in Sources */,
 				8751A6911FD9303A0068E3FE /* DriverModel.swift in Sources */,

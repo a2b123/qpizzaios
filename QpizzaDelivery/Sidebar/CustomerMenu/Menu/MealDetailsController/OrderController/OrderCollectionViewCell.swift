@@ -16,12 +16,15 @@ class OrderCollectionViewCell: BaseCell {
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .black
         label.textAlignment = .center
+        label.layer.borderColor = UIColor.qpizzaBlack().cgColor
+        label.layer.borderWidth = 1.0
+        label.layer.cornerRadius = 15
         return label
     }()
     
     let subTotalLabel: UILabel = {
         let label = UILabel()
-        label.text = "$12.99"
+        label.text = "$0.00"
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .black
         label.textAlignment = .right
@@ -30,20 +33,17 @@ class OrderCollectionViewCell: BaseCell {
     
     let mealNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Burger King"
+        label.text = "Menu Item"
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .black
         return label
     }()
-
-    
     
     override func setupViews() {
-        
         super.setupViews()
         
         backgroundColor = .white
-        
+        checkCurrentOrder()
         addSubview(quantityLabel)
         addSubview(mealNameLabel)
         addSubview(subTotalLabel)
@@ -58,4 +58,18 @@ class OrderCollectionViewCell: BaseCell {
         subTotalLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
 
     }
+    
+    func checkCurrentOrder() {
+        print(Order.currentOrder.items.count)
+        if Order.currentOrder.items.count == 0 {
+            quantityLabel.isHidden = true
+            subTotalLabel.isHidden = true
+            mealNameLabel.isHidden = true
+        } else {
+            quantityLabel.isHidden = false
+            subTotalLabel.isHidden = false
+            mealNameLabel.isHidden = false
+        }
+    }
+
 }

@@ -23,6 +23,7 @@ class OrderCell: BaseCell, UICollectionViewDelegate, UICollectionViewDataSource,
     override func setupViews() {
         super.setupViews()
         
+        
         collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -33,12 +34,24 @@ class OrderCell: BaseCell, UICollectionViewDelegate, UICollectionViewDataSource,
     
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return Order.currentOrder.items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: orderCollectionViewCell, for: indexPath) as! OrderCollectionViewCell
+        if Order.currentOrder.items.count > 0 {
+            let order = Order.currentOrder.items[indexPath.item]
+            if let menuItem = order.menuItem?.name {
+                cell.mealNameLabel.text = "\(menuItem)"
+            }
+            
+            cell.quantityLabel.text = "\(order.quantity)"
+            if let price = order.menuItem?.price {
+                cell.subTotalLabel.text = "$\(price * Float(order.quantity))"
+            }
+        }
         return cell
     }
     

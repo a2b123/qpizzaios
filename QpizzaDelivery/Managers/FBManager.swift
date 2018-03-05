@@ -25,8 +25,6 @@ class FBManager {
                 
                 let json = JSON(result)
                 UserModel.currentUser.setInfo(json: json)
-//                print(json)X
-
                 
                 completionHandler()
                 

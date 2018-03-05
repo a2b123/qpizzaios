@@ -22,45 +22,62 @@ class MenuController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView?.register(MenuCell.self, forCellWithReuseIdentifier: menuCellId)
         collectionView?.alwaysBounceVertical = true
         
-        if self.revealViewController() != nil {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu2-black-32").withRenderingMode(.alwaysOriginal), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-
-        print("Restaurant Name:", restaurant?.name) // returns nil
-        if let restaurantName = restaurant?.name {
-            self.navigationItem.title = restaurantName
-        }
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        if let restaurantName = restaurant?.name {
+            self.navigationItem.title = restaurantName
+        }
+
         loadMenuItems()
+        
+        
 
     }
     
+    private let activityIndicator = UIActivityIndicatorView()
+    
     func loadMenuItems() {
-        print("Restaurant Id:", restaurant?.id) // returns nil
+        
         if let restaurantId = restaurant?.id {
+            
+            Helpers.showActivityIndicator(activityIndicator, view)
+            
             APIManager.shared.getMenuItems(restaurantId: restaurantId, completionHandler: { (json) in
-                
+                if json != nil {
+                    self.menuItems = []
+                    
+                    if let tempMenuItems = json["meals"].array {
+                        for item in tempMenuItems {
+                            let meal = MenuItemsModel(json: item)
+                            self.menuItems.append(meal)
+                            
+                        }
+                        
+                        self.collectionView?.reloadData()
+                        Helpers.hideActivityIndicator(self.activityIndicator)
+                    }
+                }
             })
         }
     }
         
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: menuCellId, for: indexPath) as! MenuCell
+        cell.menu = menuItems[indexPath.item]
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return menuItems.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let layout = UICollectionViewFlowLayout()
         let controller = MenuDetailsController(collectionViewLayout: layout)
+        controller.menuModel = menuItems[indexPath.item]
+        controller.restaurant = restaurant
         navigationController?.pushViewController(controller, animated: true)
     }
     

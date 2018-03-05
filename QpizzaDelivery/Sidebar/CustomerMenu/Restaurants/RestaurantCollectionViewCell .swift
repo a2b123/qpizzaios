@@ -12,7 +12,10 @@ class RestaurantCollectionViewCell: BaseCell {
     
     var restauarnt: RestaurantModel? {
         didSet {
-            print("Setting")
+            restaurantNameLabel.text = restauarnt?.name
+            restaurantAddressLabel.text = restauarnt?.address
+            guard let restaurantImageUrl = restauarnt?.logo else { return }
+            restaurantLogoImageView.loadImage(urlString: restaurantImageUrl)
         }
     }
 
@@ -34,10 +37,9 @@ class RestaurantCollectionViewCell: BaseCell {
     }()
     
     
-    let restaurantLogoImageView: UIImageView = {
-        let iv = UIImageView()
+    let restaurantLogoImageView: CustomImageView = {
+        let iv = CustomImageView()
         iv.image = #imageLiteral(resourceName: "taylor-swift").withRenderingMode(.alwaysOriginal)
-//        iv.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleTopMargin]
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         return iv

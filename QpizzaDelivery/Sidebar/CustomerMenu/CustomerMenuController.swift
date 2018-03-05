@@ -40,11 +40,11 @@ class CustomerMenuController: UICollectionViewController, UICollectionViewDelega
         restaurantOption.image = #imageLiteral(resourceName: "dinner-black-32").withRenderingMode(.alwaysOriginal)
 
         let trayOption = SidebarOptions()
-        trayOption.name = "Menu"
+        trayOption.name = "Order"
         trayOption.image = #imageLiteral(resourceName: "menu-dinner-black-32").withRenderingMode(.alwaysOriginal)
         
         let orderOption = SidebarOptions()
-        orderOption.name = "Order"
+        orderOption.name = "Order Status"
         orderOption.image = #imageLiteral(resourceName: "shopping-cart-black-32").withRenderingMode(.alwaysOriginal)
         
         let logoutOption = SidebarOptions()
@@ -101,23 +101,28 @@ class CustomerMenuController: UICollectionViewController, UICollectionViewDelega
             let restaurantControlller = UINavigationController(rootViewController: RestaurantController(collectionViewLayout: layout))
             revealViewController().pushFrontViewController(restaurantControlller, animated: true)
             
+            // Uncomment To Just Show Menu
+//            let menuControlller = UINavigationController(rootViewController: MenuController(collectionViewLayout: layout))
+//            revealViewController().pushFrontViewController(menuControlller, animated: true)
+            
             print("Showing Restaurant Controller")
             
         } else if indexPath.item == 1 {
             
-            let menuControlller = UINavigationController(rootViewController: MenuController(collectionViewLayout: layout))
-            revealViewController().pushFrontViewController(menuControlller, animated: true)
+            let orderControlller = UINavigationController(rootViewController: OrderController(collectionViewLayout: layout))
+            revealViewController().pushFrontViewController(orderControlller, animated: true)
+
             
-            print("Show Menu Controller")
+            print("Show Order Controller")
 
             
             
         } else if indexPath.item == 2 {
             
-            let orderControlller = UINavigationController(rootViewController: OrderController(collectionViewLayout: layout))
-            revealViewController().pushFrontViewController(orderControlller, animated: true)
+            let deliveryControlller = UINavigationController(rootViewController: DeliveryController(collectionViewLayout: layout))
+            revealViewController().pushFrontViewController(deliveryControlller, animated: true)
             
-            print("Showing Order Controller")
+            print("Showing Delivery Status Controller")
 
         } else if indexPath.item == 3 {
             print("Logging Out..")

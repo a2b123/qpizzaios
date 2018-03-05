@@ -11,13 +11,20 @@ import UIKit
 class MenuCell: BaseCell {
     
     
-    var restaurant: RestaurantModel? {
+    var menu: MenuItemsModel? {
         didSet {
             
+            menuItemLabel.text = menu?.name
+            menuItemDetailLabel.text = menu?.short_description
+            guard let menuImageUrl = menu?.image else { return }
+            menuItemImageView.loadImage(urlString: menuImageUrl)
+            if let price = menu?.price {
+                menuItemPriceLabel.text = "$\(price)"
+            }
         }
     }
     
-    let restaurantLabel: UILabel = {
+    let menuItemLabel: UILabel = {
         let label = UILabel()
         label.text = "Restaurant King"
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -26,15 +33,15 @@ class MenuCell: BaseCell {
         return label
     }()
     
-    let mealImageView: UIImageView = {
-        let iv = UIImageView()
+    let menuItemImageView: CustomImageView = {
+        let iv = CustomImageView()
         iv.image = #imageLiteral(resourceName: "button_chicken").withRenderingMode(.alwaysOriginal)
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         return iv
     }()
     
-    let mealDetailsLabel: UILabel = {
+    let menuItemDetailLabel: UILabel = {
         let label = UILabel()
         label.text = "Grass fed grass, American cheese, and friez"
         label.font = UIFont.boldSystemFont(ofSize: 12)
@@ -43,7 +50,7 @@ class MenuCell: BaseCell {
         return label
     }()
     
-    let mealPriceLabel: UILabel = {
+    let menuItemPriceLabel: UILabel = {
         let label = UILabel()
         label.text = "$12.00"
         label.font = UIFont.boldSystemFont(ofSize: 12)
@@ -63,16 +70,16 @@ class MenuCell: BaseCell {
         
         backgroundColor = UIColor.qpizzaWhite()
         
-        addSubview(restaurantLabel)
-        addSubview(mealImageView)
-        addSubview(mealDetailsLabel)
-        addSubview(mealPriceLabel)
+        addSubview(menuItemLabel)
+        addSubview(menuItemImageView)
+        addSubview(menuItemDetailLabel)
+        addSubview(menuItemPriceLabel)
         addSubview(sepereatorView)
         
-        _ = mealImageView.anchor(topAnchor, left: nil, bottom: nil, right: rightAnchor, topConstant: 14, leftConstant: 0, bottomConstant: 0, rightConstant: 12, widthConstant: 60, heightConstant: 60)
-        _ = restaurantLabel.anchor(topAnchor, left: leftAnchor, bottom: nil, right: mealImageView.leftAnchor, topConstant: 14, leftConstant: 12, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 20)
-        _ = mealDetailsLabel.anchor(restaurantLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: mealImageView.leftAnchor, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 30)
-        _ = mealPriceLabel.anchor(mealDetailsLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 10, leftConstant: 12, bottomConstant: 10, rightConstant: 10, widthConstant: 0, heightConstant: 20)
+        _ = menuItemImageView.anchor(topAnchor, left: nil, bottom: nil, right: rightAnchor, topConstant: 14, leftConstant: 0, bottomConstant: 0, rightConstant: 12, widthConstant: 60, heightConstant: 60)
+        _ = menuItemLabel.anchor(topAnchor, left: leftAnchor, bottom: nil, right: menuItemImageView.leftAnchor, topConstant: 14, leftConstant: 12, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 20)
+        _ = menuItemDetailLabel.anchor(menuItemLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: menuItemImageView.leftAnchor, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 30)
+        _ = menuItemPriceLabel.anchor(menuItemDetailLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, topConstant: 10, leftConstant: 12, bottomConstant: 10, rightConstant: 10, widthConstant: 0, heightConstant: 20)
         _ = sepereatorView.anchor(nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 20, bottomConstant: 4, rightConstant: 20, widthConstant: 0, heightConstant: 1)
         
         

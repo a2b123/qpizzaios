@@ -71,7 +71,6 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         view.backgroundColor = UIColor.qpizzaRed()
         
         view.addSubview(qpizzaLabel)
@@ -111,9 +110,25 @@ class LoginController: UIViewController {
         }
     }
     
+    func createDriverSlidingMenu(){
+        let layout = UICollectionViewFlowLayout()
+        let frontViewController = UINavigationController(rootViewController: DriverOrderController(collectionViewLayout: layout))//create instance of frontVC
+        
+        let rearViewController = DriverMenuController(collectionViewLayout: layout)//create instance of rearVC(menuVC)
+        
+        
+        //create instance of swRevealVC based on front and rear VC
+        let swRevealVC = SWRevealViewController(rearViewController: rearViewController, frontViewController: frontViewController)
+        swRevealVC?.toggleAnimationType = SWRevealToggleAnimationType.easeOut
+        swRevealVC?.toggleAnimationDuration = 0.30
+        
+        //set swRevealVC as rootVC of windows
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.window?.rootViewController = swRevealVC
+    }
+
     
-    
-    func createSlidingMenu(){
+    func createCustomerSlidingMenu(){
         let layout = UICollectionViewFlowLayout()
         let frontViewController = UINavigationController(rootViewController: RestaurantController(collectionViewLayout: layout))//create instance of frontVC
         
@@ -137,22 +152,18 @@ class LoginController: UIViewController {
         
         if (FBSDKAccessToken.current() != nil && fbLoginSuccess == true) {
             DispatchQueue.main.async {
-                
-                self.createSlidingMenu()
 
-                let layout = UICollectionViewFlowLayout()
-                let restaurantController = RestaurantController(collectionViewLayout: layout)
-                let navRestaurantController = UINavigationController(rootViewController: restaurantController)
+
+                print("\(self.userType) and \(USERTYPE_CUSTOMER) and \(USERTYPE_DRIVER)")
+                if self.userType.lowercased() == USERTYPE_DRIVER {
+                    self.createDriverSlidingMenu()
+                    print(self.userType)
+                } else if self.userType.lowercased() == USERTYPE_CUSTOMER {
+                    print("EEE")
+                    self.createCustomerSlidingMenu()
+                }
                 
-                // Using this wont present the reveal..
-//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                appDelegate.window!.rootViewController = navRestaurantController
-                
-                // Using this will cause a view hiearchary error:
-                self.present(navRestaurantController, animated: true, completion: nil)
             }
-            return
-            
         }
     }
 
@@ -167,7 +178,6 @@ class LoginController: UIViewController {
                     print("Error Logging In With UserType / API...:", error)
                 }
 
-                print("FBSDK Access Token UserId:", FBSDKAccessToken.current().userID)
                 self.fbLoginSuccess = true
                 self.viewDidAppear(true)
             })
@@ -187,6 +197,7 @@ class LoginController: UIViewController {
                             }
                             
                             print("FBSDK Access Token UserId:", FBSDKAccessToken.current().userID)
+                            print("Usernameeeeee", UserModel.currentUser.name)
                             self.fbLoginSuccess = true
                             self.viewDidAppear(true)
                         })
@@ -214,13 +225,14 @@ class LoginController: UIViewController {
     }
     
     @objc func changeSegment(sender: UISegmentedControl) {
-        print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
         
         switch sender.selectedSegmentIndex {
         case 0:
-            print("0")
+            userType = USERTYPE_CUSTOMER
+            print(userType)
         case 1:
-            print("1")
+            userType = USERTYPE_DRIVER
+            print(userType)
         default: break
         }
     }
